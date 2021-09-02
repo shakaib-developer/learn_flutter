@@ -24,21 +24,23 @@ class ServicesListPageViewModel extends GetxController {
     super.onClose();
   }
 
-  Future fetchData() async {
-    ApiCalls api = ApiCalls();
-
+  Future<void> fetchData() async {
     isLoading(true);
 
-    servicesList = await api.fetchServicesList();
+    await refreshListData();
     // if(servicesFromApi != null){
     //   servicesList = servicesFromApi;
     // }
     isLoading(false);
   }
 
-  void updateItem(int index, ClsService newItem) {
-    servicesList[index].description = "Updated Item description";
-    servicesList[index].serviceName = "Updated Service";
+  Future<void> refreshListData() async {
+    ApiCalls api = ApiCalls();
+    setServicesList(await api.fetchServicesList());
+  }
+
+  void setServicesList(List<ClsService> servicesList){
+    this.servicesList.value = servicesList;
     update();
   }
 }

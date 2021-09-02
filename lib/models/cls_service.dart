@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 import 'cls_document.dart';
 
-List<ClsService> clsServiceFromJson(String str) => RxList<ClsService>.from
+List<ClsService> clsServiceFromJson(String str) => List<ClsService>.from
    (json.decode(str).map((x) => ClsService.fromJson(x)));
 
 String clsServiceToJson(List<ClsService> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));

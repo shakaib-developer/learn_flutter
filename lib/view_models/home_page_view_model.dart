@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePageViewModel extends GetxController {
@@ -6,6 +5,7 @@ class HomePageViewModel extends GetxController {
 
   void changeTabIndex(int index) {
     currentTab.value = index;
+    update();
   }
 
 }
