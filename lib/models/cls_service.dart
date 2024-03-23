@@ -4,14 +4,14 @@
 
 import 'dart:convert';
 import 'package:archline_flutter/utility/global_data.dart';
-import 'package:get/get.dart';
 
 import 'cls_document.dart';
 
-List<ClsService> clsServiceFromJson(String str) => List<ClsService>.from
-   (json.decode(str).map((x) => ClsService.fromJson(x)));
+List<ClsService> clsServiceFromJson(String str) =>
+    List<ClsService>.from(json.decode(str).map((x) => ClsService.fromJson(x)));
 
-String clsServiceToJson(List<ClsService> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String clsServiceToJson(List<ClsService> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 /*=========================================================================*/
 
@@ -52,15 +52,16 @@ class ClsService {
     svc.imageName2 = json["ImageName2"];
     svc.imageName3 = json["ImageName3"];
     svc.imageName4 = json["ImageName4"];
-    svc.createdDate = DateTime.fromMicrosecondsSinceEpoch(GlobalData.epochToDate(json["CreatedDate"]));
+    svc.createdDate = DateTime.fromMicrosecondsSinceEpoch(
+        GlobalData.epochToDate(json["CreatedDate"]));
     svc.createdBy = json["CreatedBy"];
     svc.createdByString = json["CreatedByString"];
-    svc.updatedDate = DateTime.fromMicrosecondsSinceEpoch(GlobalData
-        .epochToDate(json["UreatedDate"]));
+    svc.updatedDate = DateTime.fromMicrosecondsSinceEpoch(
+        GlobalData.epochToDate(json["UreatedDate"]));
     svc.updatedBy = json["UpdatedBy"];
     svc.updatedByString = json["UpdatedByString"];
-    svc.documentsList = List<ClsDocument>.from(json["DocumentsList"].map(
-            (x) => ClsDocument.fromJson(x)));
+    svc.documentsList = List<ClsDocument>.from(
+        json["DocumentsList"].map((x) => ClsDocument.fromJson(x)));
     // svc.documentsList = (json["DocumentsList"].map(
     // (x) => ClsDocument.fromJson(x))) as RxList<ClsDocument>;
 

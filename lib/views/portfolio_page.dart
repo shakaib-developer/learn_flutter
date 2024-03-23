@@ -1,7 +1,7 @@
 import 'package:archline_flutter/utility/styles.dart';
 import 'package:archline_flutter/view_models/portfolio_page_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:gallery_view/gallery_view.dart';
+import 'package:gallery_image_viewer/gallery_image_viewer.dart';
 import 'package:get/get.dart';
 
 class PortfolioPage extends StatelessWidget {
@@ -43,11 +43,19 @@ class PortfolioPage extends StatelessWidget {
                         return Center(child: CircularProgressIndicator());
                       else
                         // return Text(vm.portfolioList.value.length.toString());
-                        return GalleryView(
-                          crossAxisCount: 2,
-                          imageUrlList: vm.portfolioList.map((e) => e.imagePath ?? "").toList(),
-                          key: Key("myGallery"),
+                        return GalleryImageView(
+                          listImage: vm.portfolioList.map((e) => Image.network(e.imagePath ?? "").image).toList(),
+                          width: 200,
+                          height: 200,
+                          imageDecoration:
+                          BoxDecoration(border: Border.all(color: Colors.white)),
+                          galleryType: 1,
                         );
+                        //   GalleryView(
+                        //   crossAxisCount: 2,
+                        //   imageUrlList: vm.portfolioList.map((e) => e.imagePath ?? "").toList(),
+                        //   key: Key("myGallery"),
+                        // );
                     },
                   )
                 )

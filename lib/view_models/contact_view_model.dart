@@ -8,18 +8,21 @@ class ContactViewModel extends GetxController {
   var isLoading = false.obs;
 
   @override
-  void onInit() { // called immediately after the widget is allocated memory
+  void onInit() {
+    // called immediately after the widget is allocated memory
     fetchData();
     super.onInit();
   }
 
   @override
-  void onReady() { // called after the widget is rendered on screen
+  void onReady() {
+    // called after the widget is rendered on screen
     super.onReady();
   }
 
   @override
-  void onClose() { // called just before the Controller is deleted from memory
+  void onClose() {
+    // called just before the Controller is deleted from memory
     super.onClose();
   }
 
@@ -36,13 +39,13 @@ class ContactViewModel extends GetxController {
 
   Future<void> launchURL(String url) async {
     if (await canLaunch(url)) {
-    await launch(
-    url,
-    forceSafariVC: false,
-    forceWebView: false,
-    );
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+      );
     } else {
-    Get.snackbar("Oh No!", "Inavlid url!");
+      Get.snackbar("Oh No!", "Inavlid url!");
     }
   }
 }

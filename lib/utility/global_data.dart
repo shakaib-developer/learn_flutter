@@ -3,7 +3,7 @@ class GlobalData {
   static String deviceToken = "";
 
   static int epochToDate(String? epochString) {
-    print("epoch ki VALUE ${epochString}");
+    print("epoch ki VALUE $epochString");
 
     String myEpoch = epochString ?? "";
     epochString = myEpoch.replaceAll(new RegExp(r"\D"), "");

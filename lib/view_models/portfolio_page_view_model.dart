@@ -2,7 +2,6 @@ import 'package:archline_flutter/api/api_calls.dart';
 import 'package:archline_flutter/models/cls_portfolio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:photo_view/photo_view.dart';
 
 class PortfolioViewModel extends GetxController {
   var portfolioList = <ClsPortfolio>[].obs;
@@ -12,19 +11,22 @@ class PortfolioViewModel extends GetxController {
   var isLoading = false.obs;
 
   @override
-  void onInit() { // called immediately after the widget is allocated memory
+  void onInit() {
+    // called immediately after the widget is allocated memory
     fetchData();
 
     super.onInit();
   }
 
   @override
-  void onReady() { // called after the widget is rendered on screen
+  void onReady() {
+    // called after the widget is rendered on screen
     super.onReady();
   }
 
   @override
-  void onClose() { // called just before the Controller is deleted from memory
+  void onClose() {
+    // called just before the Controller is deleted from memory
     super.onClose();
   }
 
